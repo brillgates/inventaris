@@ -134,8 +134,7 @@
 						if (data == 'false') {
 							swal('Error', 'Tidak Di Temukan Akun !', 'error')			
 						}else{
-							
-							jhjh
+							location = '<?php echo base_url("home/home") ?>'
 						}
 					}
 				})

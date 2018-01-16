@@ -18,9 +18,9 @@ class Home extends CI_Controller {
 	public function login()
 	{	
 		// $_POST['username'] => di ambil dari data AJAX yg dikiramkan ok
-		$username = $_POST['username'];
+		$username = 'admin';
 		// $_POST['password'] => di ambil dari data AJAX yg dikiramkan ok
-		$pass = $_POST['password'];
+		$pass = 'admin';
 		// lalu kita hast $pass ke SHA1
 		$password = sha1($pass);
 
@@ -31,9 +31,16 @@ class Home extends CI_Controller {
 		if ($cek->num_rows() > 0) {
 			// Ketika akun telah di temukan, maksud nya berhasil login
 			// kita set session nya ok
+			$dapat = $cek->row_array();
 
-			// $array = array('nama' => $cek['nama'], 'username' => $cek['username'], 'password' => $cek['password'], 'level' => $cek['level']);
-			// $this->session->set_userdata($array);
+			$array = array(
+				'nama' => $dapat['nama'], 
+				'username' => $dapat['username'], 
+				'password' => $dapat['password'], 
+				'level' => $dapat['level']
+			);
+
+			$this->session->set_userdata($array);
 
 			echo "true";
 		}else{
@@ -46,6 +53,8 @@ class Home extends CI_Controller {
 	// home
 	public function home()
 	{
-		echo "asd";
+		$this->load->view('home/layout/header');
+		$this->load->view('home/home');
+		$this->load->view('home/layout/footer');
 	}
 }
