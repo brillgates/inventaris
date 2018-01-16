@@ -134,12 +134,8 @@
 						if (data == 'false') {
 							swal('Error', 'Tidak Di Temukan Akun !', 'error')			
 						}else{
-							swal('Login', 'Berhasil Membuat Session ^_^', 'success')
-
-							// kita tunggu 3 detik, baru kita di alihkan ke halaman dashboard
-							setTimeout(function() {
-								location = '<?php echo base_url("home/home") ?>'
-							}, 3000);
+							
+							jhjh
 						}
 					}
 				})
