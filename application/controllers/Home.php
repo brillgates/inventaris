@@ -18,9 +18,9 @@ class Home extends CI_Controller {
 	public function login()
 	{	
 		// $_POST['username'] => di ambil dari data AJAX yg dikiramkan ok
-		$username = 'admin';
+		$username = $_POST['username'];
 		// $_POST['password'] => di ambil dari data AJAX yg dikiramkan ok
-		$pass = 'admin';
+		$pass = $_POST['password'];
 		// lalu kita hast $pass ke SHA1
 		$password = sha1($pass);
 
@@ -34,10 +34,10 @@ class Home extends CI_Controller {
 			$dapat = $cek->row_array();
 
 			$array = array(
-				'nama' => $dapat['nama'], 
-				'username' => $dapat['username'], 
-				'password' => $dapat['password'], 
-				'level' => $dapat['level']
+				'nama' 		=> $dapat['nama'], 
+				'username' 	=> $dapat['username'], 
+				'password' 	=> $dapat['password'], 
+				'level'	 	=> $dapat['level']
 			);
 
 			$this->session->set_userdata($array);
@@ -57,4 +57,69 @@ class Home extends CI_Controller {
 		$this->load->view('home/home');
 		$this->load->view('home/layout/footer');
 	}
+
+	// ================== SUPLIER METHOD ==================================
+	// suplier
+	public function suplier()
+	{
+		$this->load->view('home/layout/header');
+		$this->load->view('home/suplier');
+		$this->load->view('home/layout/footer');
+	}
+
+	// ================== barang METHOD ==================================
+	// barang
+	public function barang()
+	{
+		$this->load->view('home/layout/header');
+		$this->load->view('home/barang');
+		$this->load->view('home/layout/footer');
+	}
+
+	// ================== barang_masuk METHOD ==================================
+	// barang_masuk
+	public function barang_masuk()
+	{
+		$this->load->view('home/layout/header');
+		$this->load->view('home/barang_masuk');
+		$this->load->view('home/layout/footer');
+	}
+
+	// ================== barang_keluar METHOD ==================================
+	// barang_keluar
+	public function barang_keluar()
+	{
+		$this->load->view('home/layout/header');
+		$this->load->view('home/barang_keluar');
+		$this->load->view('home/layout/footer');
+	}
+
+	// ================== pinjam_barang METHOD ==================================
+	// pinjam_barang
+	public function pinjam_barang()
+	{
+		$this->load->view('home/layout/header');
+		$this->load->view('home/pinjam_barang');
+		$this->load->view('home/layout/footer');
+	}
+
+	// ================== data_barang METHOD ==================================
+	// data_barang
+	public function data_barang()
+	{
+		$this->load->view('home/layout/header');
+		$this->load->view('home/data_barang');
+		$this->load->view('home/layout/footer');
+	}
+
+	// ================== setting METHOD ==================================
+	// setting
+	public function setting()
+	{
+		$this->load->view('home/layout/header');
+		$this->load->view('home/setting');
+		$this->load->view('home/layout/footer');
+	}
+
+	
 }
