@@ -1,7 +1,7 @@
 	</div>	<!--/.main-->
 	
 
-	<script src="<?php echo base_url("assets/template/") ?>js/jquery-1.11.1.min.js"></script>
+	
 	<script src="<?php echo base_url("assets/template/") ?>js/bootstrap.min.js"></script>
 	<script src="<?php echo base_url("assets/template/") ?>js/chart.min.js"></script>
 	<script src="<?php echo base_url("assets/template/") ?>js/chart-data.js"></script>

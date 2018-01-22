@@ -1,9 +1,17 @@
+<?php 
 
+  if (!empty($_SESSION['username']) && !empty($_SESSION['password'])) {
+
+    redirect('home/home');
+
+  }
+
+?>
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Login V15</title>
+	<title>Login Inventaris</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->	

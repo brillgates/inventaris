@@ -1,11 +1,14 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
+
+// Controller 
 class Home extends CI_Controller {
 
 	function __construct(){
 		parent::__construct();
 		$this->load->database();
+		$this->load->helper('date');
 	}
 
 	public function index()
@@ -50,7 +53,7 @@ class Home extends CI_Controller {
 	}
 
 
-	// home
+	// Home
 	public function home() 
 	{
 		$this->load->view('home/layout/header');
@@ -103,6 +106,33 @@ class Home extends CI_Controller {
 		$this->load->view('home/layout/footer');
 	}
 
+	// search_barang_jenis
+	public function search_barang_kat()
+	{
+		$kat = $_POST['kat'];
+		$output = '';
+		$get = $this->db->get_where('barang', array('kategori' => $kat))->result_array();
+
+		$output .= '
+				<div class="form-group">
+					<label>Nama Barang : </label>
+					<select class="form-control" id="option_kode">';
+		foreach ($get as $key) {
+			$output .= '<option value="'.$key['kode_brg'].'">'.$key['nama_brg'].'</option>';
+		}
+		$output .= '</select><br>
+					<button class="btn btn-success" onclick="submit()">Submit</button>
+				</div><br>
+				';
+		echo json_encode($output);
+	}
+
+	// search_barang_kode
+	public function search_barang_kode($kode)
+	{
+		$get = $this->db->get_where('barang', array('kode_brg' => $kode))->row_array();
+		echo json_encode($get);
+	}
 	// ================== data_barang METHOD ==================================
 	// data_barang
 	public function data_barang()
@@ -121,5 +151,33 @@ class Home extends CI_Controller {
 		$this->load->view('home/layout/footer');
 	}
 
-	
+	public function logout()
+
+	{
+
+		$this->session->sess_destroy();
+
+		redirect('home/index');
+
+	}
+
+	//
+	public function hast()
+	 {
+	 	$this->load->library('encryption');
+
+	 	$this->encryption->initialize(
+	        array(
+	                'cipher' => 'aes-256',
+	                'mode' => 'cfb8',
+	                'key' => '<a 32-character random string>'
+	        )
+		);
+		$text = 'aku nub ster :(';
+		$enkrip = $this->encryption->encrypt($text);
+
+		
+		echo $enkrip;
+
+	 } 
 }

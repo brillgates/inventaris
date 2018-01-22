@@ -1,11 +1,18 @@
-<?php if (empty($_SESSION['username']) && empty($_SESSION['password'])) {echo "agagal";}?>
+<?php 
 
+  if (empty($_SESSION['username']) && empty($_SESSION['password'])) {
+
+    redirect('home/index');
+
+  }
+
+?>
 <!DOCTYPE html>
 <html>
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Lumino - Dashboard</title>
+	<title>Dashboard Inventaris</title>
 	<link href="<?php echo base_url("assets/template/") ?>css/bootstrap.min.css" rel="stylesheet">
 	<link href="<?php echo base_url("assets/template/") ?>css/font-awesome.min.css" rel="stylesheet">
 	<link href="<?php echo base_url("assets/template/") ?>css/datepicker3.css" rel="stylesheet">
@@ -17,6 +24,7 @@
 	<script src="js/html5shiv.js"></script>
 	<script src="js/respond.min.js"></script>
 	<![endif]-->
+	<script src="<?php echo base_url("assets/template/") ?>js/jquery-1.11.1.min.js"></script>
 </head>
 <body>
 	<nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
@@ -74,7 +82,7 @@
 					</a></li>
 				</ul>
 			</li> -->
-			<li><a href="login.html"><em class="fa fa-power-off">&nbsp;</em> Logout</a></li>
+			<li class="bg-red"><a style="color:white " href="<?php echo base_url("home/logout") ?>"><em class="fa fa-dashboard">&nbsp;</em> Logout</a></li>
 		</ul>
 	</div><!--/.sidebar-->
 		
@@ -95,33 +103,33 @@
 			<div class="row">
 				<div class="col-xs-6 col-md-3 col-lg-3 no-padding">
 					<div class="panel panel-teal panel-widget border-right">
-						<div class="row no-padding"><em class="fa fa-xl fa-shopping-cart color-blue"></em>
+						<div class="row no-padding"><em class="fa fa-xl fa-sign-in color-blue"></em>
 							<div class="large">120</div>
-							<div class="text-muted">New Orders</div>
+							<div class="text-muted">Barang Masuk</div>
 						</div>
 					</div>
 				</div>
 				<div class="col-xs-6 col-md-3 col-lg-3 no-padding">
 					<div class="panel panel-blue panel-widget border-right">
-						<div class="row no-padding"><em class="fa fa-xl fa-comments color-orange"></em>
+						<div class="row no-padding"><em class="fa fa-xl fa-sign-out color-orange"></em>
 							<div class="large">52</div>
-							<div class="text-muted">Comments</div>
+							<div class="text-muted">Barang Keluar</div>
 						</div>
 					</div>
 				</div>
 				<div class="col-xs-6 col-md-3 col-lg-3 no-padding">
 					<div class="panel panel-orange panel-widget border-right">
-						<div class="row no-padding"><em class="fa fa-xl fa-users color-teal"></em>
+						<div class="row no-padding"><em class="fa fa-xl fa-book color-teal"></em>
 							<div class="large">24</div>
-							<div class="text-muted">New Users</div>
+							<div class="text-muted">Barang Pinjam</div>
 						</div>
 					</div>
 				</div>
 				<div class="col-xs-6 col-md-3 col-lg-3 no-padding">
 					<div class="panel panel-red panel-widget ">
-						<div class="row no-padding"><em class="fa fa-xl fa-search color-red"></em>
+						<div class="row no-padding"><em class="fa fa-xl fa-trash color-red"></em>
 							<div class="large">25.2k</div>
-							<div class="text-muted">Page Views</div>
+							<div class="text-muted">Barang Rusak</div>
 						</div>
 					</div>
 				</div>
