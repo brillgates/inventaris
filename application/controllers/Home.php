@@ -59,6 +59,7 @@ class Home extends CI_Controller {
 		$this->load->view('home/layout/header');
 		$this->load->view('home/home');
 		$this->load->view('home/layout/footer');
+		// echo "aahsdgsd";
 	}
 
 	// ================== SUPLIER METHOD ==================================
