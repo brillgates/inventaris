@@ -17,7 +17,7 @@
 	<link href="<?php echo base_url("assets/template/") ?>css/font-awesome.min.css" rel="stylesheet">
 	<link href="<?php echo base_url("assets/template/") ?>css/datepicker3.css" rel="stylesheet">
 	<link href="<?php echo base_url("assets/template/") ?>css/styles.css" rel="stylesheet">
-	
+	<link href="<?php echo base_url("assets/plugin/datatables/media/css/") ?>jquery.dataTables.min.css" rel="stylesheet">
 	<!--Custom Font-->
 	<link href="https://fonts.googleapis.com/css?family=Montserrat:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
 	<!--[if lt IE 9]>
@@ -59,7 +59,19 @@
 		<ul class="nav menu">
 			<li class="active"><a href="<?php echo base_url("home/home") ?>"><em class="fa fa-dashboard">&nbsp;</em> Dashboard</a></li>
 			<li><a href="<?php echo base_url("home/suplier") ?>"><em class="fa fa-users">&nbsp;</em> Suplier</a></li>
-			<li><a href="<?php echo base_url("home/barang") ?>"><em class="fa fa-file">&nbsp;</em> Barang</a></li>
+
+			<li class="parent "><a data-toggle="collapse" href="#sub-item-1">
+				<em class="fa fa-book">&nbsp;</em> List Barang <span data-toggle="collapse" href="#sub-item-1" class="icon pull-right"><em class="fa fa-plus"></em></span>
+				</a>
+				<ul class="children collapse" id="sub-item-1">
+					<li><a href="<?php echo base_url("home/list_barang") ?>"><em class="fa fa-list">&nbsp;</em> List Barang</a></li>
+					<li><a href="<?php echo base_url("home/list_barang_pinjam") ?>"><em class="fa fa-list">&nbsp;</em> List Pinjaman</a></li>
+					<li><a href="<?php echo base_url("home/list_barang") ?>"><em class="fa fa-list">&nbsp;</em> List Barang In</a></li>
+					<li><a href="<?php echo base_url("home/list_barang") ?>"><em class="fa fa-list">&nbsp;</em> List Barang Out</a></li>
+				</ul>
+			</li>
+
+			
 			<li><a href="<?php echo base_url("home/barang_masuk") ?>"><em class="fa fa-sign-in">&nbsp;</em> Barang Masuk</a></li>
 			<li><a href="<?php echo base_url("home/barang_keluar") ?>"><em class="fa fa-sign-out">&nbsp;</em> Barang Keluar</a></li>
 			<li><a href="<?php echo base_url("home/pinjam_barang") ?>"><em class="fa fa-file">&nbsp;</em> Pinjam Barang</a></li>
@@ -67,21 +79,7 @@
 
 			<li><a href="<?php echo base_url("home/setting") ?>"><em class="fa fa-gear">&nbsp;</em> Setting</a></li>
 
-			<!-- <li class="parent "><a data-toggle="collapse" href="#sub-item-1">
-				<em class="fa fa-navicon">&nbsp;</em> Multilevel <span data-toggle="collapse" href="#sub-item-1" class="icon pull-right"><em class="fa fa-plus"></em></span>
-				</a>
-				<ul class="children collapse" id="sub-item-1">
-					<li><a class="" href="#">
-						<span class="fa fa-arrow-right">&nbsp;</span> Sub Item 1
-					</a></li>
-					<li><a class="" href="#">
-						<span class="fa fa-arrow-right">&nbsp;</span> Sub Item 2
-					</a></li>
-					<li><a class="" href="#">
-						<span class="fa fa-arrow-right">&nbsp;</span> Sub Item 3
-					</a></li>
-				</ul>
-			</li> -->
+			
 			<li class="bg-red"><a style="color:white " href="<?php echo base_url("home/logout") ?>"><em class="fa fa-dashboard">&nbsp;</em> Logout</a></li>
 		</ul>
 	</div><!--/.sidebar-->

@@ -100,6 +100,7 @@
 					<label>Jumlah :</label> 
 					<input type="text" name="in_jumlah" class="form-control" required="">
 					<small><b id="sisa_barang"></b> Barang Tersisa</small>
+					<input type="hidden" id="jumlah_saat_ini" name="jumlah_saat_ini" value="">
 				</div>
 				<div class="form-group">
 					<label>Tanggal Pinjam :</label> 
@@ -108,14 +109,14 @@
 				</div>
 				<div class="form-group">
 					<label>Tanggal Kembali :</label> 
-					<input type="text" name="in_tanggal_kembali" class="form-control" required="">
+					<input type="text" id="tanggal_kembali" name="in_tanggal_kembali" class="form-control" required="">
 				</div>
 				<div class="form-group">
 					<label>Keterangan :</label> 
 					<textarea name="in_ket" class="form-control"></textarea>
 				</div>
 				<input type="hidden" name="in_kode" id="in_kode">
-				<input type="hidden" name="in_nama" id="in_nama">
+				<input type="hidden" name="in_nama_brg" id="in_nama">
 				<div class="form-group">
 					<button class="btn btn-danger" onclick="location.reload()"><i class="fa fa-refresh"></i> Kembali</button>
 					<input type="submit" name="simpan" class="btn btn-primary" value="Simpan">
@@ -166,6 +167,8 @@
 				$('#td_kode').html(data.kode_brg);
 				$('#in_kode').val(data.kode_brg);
 				$('#in_nama').val(data.nama_brg);
+				$('#jumlah_saat_ini').val(data.jml_brg);
+				
 				$('#td_nama').html(data.nama_brg);
 				$('#td_spek').html(data.spesifikasi);
 				$('#td_lokas').html(data.lokasi_brg);

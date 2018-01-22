@@ -9,6 +9,8 @@
 	<script src="<?php echo base_url("assets/template/") ?>js/easypiechart-data.js"></script>
 	<script src="<?php echo base_url("assets/template/") ?>js/bootstrap-datepicker.js"></script>
 	<script src="<?php echo base_url("assets/template/") ?>js/custom.js"></script>
+	<script src="<?php echo base_url("assets/plugin/datatables/media/js/") ?>jquery.dataTables.min.js"></script>
+	
 	<script>
 		window.onload = function () {
 	var chart1 = document.getElementById("line-chart").getContext("2d");
@@ -18,7 +20,13 @@
 	scaleGridLineColor: "rgba(0,0,0,.05)",
 	scaleFontColor: "#c5c7cc"
 	});
-};
+};	
+
+	
+	$(document).ready(function(){
+	    $('#table_list_pinjaman').DataTable();
+	});
+
 	</script>
 		
 </body>

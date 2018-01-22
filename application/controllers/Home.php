@@ -133,6 +133,45 @@ class Home extends CI_Controller {
 		$get = $this->db->get_where('barang', array('kode_brg' => $kode))->row_array();
 		echo json_encode($get);
 	}
+
+	// tambah_pinjaman
+	public function tambah_pinjaman()
+	{
+		
+
+		$data = array(
+			'tgl_pinjam' => mdate('%d/%m/%Y'),
+			'kode_brg' => $this->input->post('in_kode'),
+			'nama_brg' => $this->input->post('in_nama_brg'),
+			'jumlah_pinjam' => $this->input->post('in_jumlah'),
+			'peminjam' => $this->input->post('in_nama'),
+			'tgl_kembali' => $this->input->post('in_tanggal_kembali'),
+			'ket' => $this->input->post('in_ket'),
+			// 'nama_brg' => $this->input->post('in_nama'),
+		);
+
+		$this->db->insert('pinjam_barang', $data);
+
+		$cek = $this->input->post('jumlah_saat_ini') - $this->input->post('in_jumlah');
+
+		$this->db->set(array('jml_brg' => $cek));
+		$this->db->where('kode_brg', $this->input->post('in_kode'));
+		$a = $this->db->update('barang');
+
+		if ($a) {
+			echo "<script>alert('Berhasil Meminjam Barang !'); location = '".base_url('home/pinjam_barang')."'</script>";
+		}else{
+			echo "<script>alert('Gagal Meminjam Barang !'); location = '".base_url('home/pinjam_barang')."'</script>";
+		}
+	}
+	// list_barang_pinjam
+	public function list_barang_pinjam()
+	{	
+		$data['data'] = $this->db->order_by('no_pinjam', 'DESC')->get('pinjam_barang')->result_array();
+		$this->load->view('home/layout/header');
+		$this->load->view('home/pinjam/list_barang_pinjam', $data);
+		$this->load->view('home/layout/footer');
+	}
 	// ================== data_barang METHOD ==================================
 	// data_barang
 	public function data_barang()
