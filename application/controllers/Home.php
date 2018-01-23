@@ -287,9 +287,15 @@ class Home extends CI_Controller {
 	// data_barang
 	public function data_barang()
 	{
+		$data['data'] = $this->db->order_by('kode_brg', 'DESC')->get('barang')->result_array();
 		$this->load->view('home/layout/header');
-		$this->load->view('home/data_barang');
+		$this->load->view('home/data_barang', $data);
 		$this->load->view('home/layout/footer');
+	}
+
+	public function tampil_data()
+	{
+
 	}
 
 	// ================== setting METHOD ==================================
