@@ -67,7 +67,7 @@
 				<ul class="children collapse" id="sub-item-1">
 					<li><a href="<?php echo base_url("home/list_barang") ?>"><em class="fa fa-list">&nbsp;</em> List Barang</a></li>
 					<li><a href="<?php echo base_url("home/list_barang_pinjam") ?>"><em class="fa fa-list">&nbsp;</em> List Pinjaman</a></li>
-					<li><a href="<?php echo base_url("home/list_barang") ?>"><em class="fa fa-list">&nbsp;</em> List Barang In</a></li>
+					<li><a href="<?php echo base_url("home/list_barang_in") ?>"><em class="fa fa-list">&nbsp;</em> List Barang In</a></li>
 					<li><a href="<?php echo base_url("home/list_barang") ?>"><em class="fa fa-list">&nbsp;</em> List Barang Out</a></li>
 				</ul>
 			</li>

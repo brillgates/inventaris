@@ -25,6 +25,8 @@
 	
 	$(document).ready(function(){
 	    $('#table_list_pinjaman').DataTable();
+	    $('#table_list_in').DataTable();
+	    
 	});
 
 	function perhitungan_grafik() {
@@ -35,6 +37,7 @@
 			success : function(data){
 				$('#header_barang_masuk').html(data.masuk);
 				$('#header_barang_pinjam').html(data.pinjam);
+				// 
 			}
 		})
 	}

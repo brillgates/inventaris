@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 
 <div class="row">
 	<div class="col-md-12">
@@ -152,7 +151,3 @@
 		})		
 	}
 </script>
-	
-=======
-cek
->>>>>>> 7a5b6997a6d18401d1d8da404dfa03fd88562295
