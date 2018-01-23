@@ -21,7 +21,7 @@
 			</div>
 			<div class="panel-body">
 				<div class="form-group">
-					<label>Kaetegori Barang : </label>
+					<label>Kategori Barang : </label>
 					<select class="form-control">
 						<?php $a = $this->db->order_by('kategori_brg', 'DESC')->get('kategori_barang')->result_array();
 						foreach ($a as $key) {
