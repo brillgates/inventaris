@@ -254,7 +254,7 @@ class Home extends CI_Controller {
 		$this->load->view('home/pinjam/list_barang_pinjam', $data);
 		$this->load->view('home/layout/footer');
 	}
-<<<<<<< HEAD
+
 	// list_barang_keluar
 	public function list_barang_keluar()
 	{	
@@ -262,8 +262,8 @@ class Home extends CI_Controller {
 		$this->load->view('home/layout/header');
 		$this->load->view('home/keluar/list_barang_keluar', $data);
 		$this->load->view('home/layout/footer');
-=======
 
+	}
 	// hapus_peminjaman
 	public function hapus_peminjaman()
 	{
@@ -284,7 +284,7 @@ class Home extends CI_Controller {
 		$this->db->update('barang');
 
 		echo "Pinjaman Telah Di Kembalikan !";
->>>>>>> 44af3238db5c7afed5221455d6906e376d9dbd8f
+
 	}
 	// ================== data_barang METHOD ==================================
 	// data_barang
@@ -321,7 +321,7 @@ class Home extends CI_Controller {
 	{
 		$output = [];
 		$output['masuk'] = $this->db->like('tgl_masukbarang', mdate('%d/%m'))->get('masuk_barang')->num_rows();
-		// $output['keluar'] = $this->db->like('tgl_masukbarang', mdate('%d/%m'))->get('masuk_barang')->num_rows();
+		$output['keluar'] = $this->db->like('tgl_keluar', mdate('%d/%m'))->get('keluar_barang')->num_rows();
 		$output['pinjam'] = $this->db->like('tgl_pinjam', mdate('%d/%m'))->get('pinjam_barang')->num_rows();
 		// $output['rusak'] = $this->db->like('tgl_masukbarang', mdate('%d/%m'))->get('masuk_barang')->num_rows();
 		echo json_encode($output);

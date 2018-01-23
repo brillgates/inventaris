@@ -37,6 +37,7 @@
 			success : function(data){
 				$('#header_barang_masuk').html(data.masuk);
 				$('#header_barang_pinjam').html(data.pinjam);
+				$('#header_barang_keluar').html(data.keluar);
 			}
 		})
 	}
