@@ -25,6 +25,8 @@
 	
 	$(document).ready(function(){
 	    $('#table_list_pinjaman').DataTable();
+	    $('#table_list_barang_keluar').DataTable();
+	    // 
 	});
 
 	</script>
