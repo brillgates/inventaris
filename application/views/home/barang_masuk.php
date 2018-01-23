@@ -4,7 +4,7 @@
 		
 		<div class="panel">
 			<div class="panel-heading">
-				<h2><i class="fa fa-book"></i> Pinjam Barang</h2>
+				<h2><i class="fa fa-book"></i> Barang Masuk </h2>
 			</div>
 			<div class="panel-body">
 				
@@ -17,7 +17,7 @@
 		
 		<div class="panel">
 			<div class="panel-heading">
-				<h3><i class="fa fa-search"></i> Cari Barang</h3>
+				<h3> Barang Masuk </h3>
 			</div>
 			<div class="panel-body">
 				<div class="form-group">
@@ -52,34 +52,7 @@
 						<td>Nama Barang : </td>
 						<td id="td_nama"></td>
 					</tr>
-					<tr>
-						<td>Speksifikasi Barang : </td>
-						<td id="td_spek"></td>
-					</tr>
-					<tr>
-						<td>Lokasi Barang : </td>
-						<td id="td_lokas"></td>
-					</tr>
-					<tr>
-						<td>Kategori Barang : </td>
-						<td id="td_kat"></td>
-					</tr>
-					<tr>
-						<td>Jumlah Barang : </td>
-						<td id="td_jumlah"></td>
-					</tr>
-					<tr>
-						<td>Kondisi Barang : </td>
-						<td id="td_kondisi"></td>
-					</tr>
-					<tr>
-						<td>Jenis Barang Barang : </td>
-						<td id="td_jenis"></td>
-					</tr>
-					<tr>
-						<td>Sumber Dana : </td>
-						<td id="td_dana"></td>
-					</tr>
+					
 				</table>
 			</div>
 		</div>
@@ -88,13 +61,17 @@
 	<div class="col-md-8" >
 		<div class="panel"  id="tampil_pinjam">
 			<div class="panel-heading">
-				<h3>Keterangan Peminjaman</h3>
+				<h3>Keterangan Barang Masuk</h3>
 			</div>
 			<div class="panel-body">
-		<form method="POST" action="<?php echo base_url("home/tambah_pinjaman") ?>">
+		<form method="POST" action="<?php echo base_url("home/tambah_barang_masuk") ?>">
 				<div class="form-group">
-					<label>Nama :</label> 
-					<input type="text" name="in_nama" class="form-control" required="">
+					<label>Supplier :</label> 
+					<select class="form-control" name="supplier">
+						
+						<option value="Lab Persada">Lab Persada</option>
+
+					</select><br>
 				</div>
 				<div class="form-group">
 					<label>Jumlah :</label> 
@@ -103,17 +80,9 @@
 					<input type="hidden" id="jumlah_saat_ini" name="jumlah_saat_ini" value="">
 				</div>
 				<div class="form-group">
-					<label>Tanggal Pinjam :</label> 
+					<label>Tanggal Masuk :</label> 
 					<!-- <input type="text" id="tanggal_pinjam" class="form-control"> -->
 					<?php echo mdate('%d/%m/%Y') ?>
-				</div>
-				<div class="form-group">
-					<label>Tanggal Kembali :</label> 
-					<input type="text" id="tanggal_kembali" name="in_tanggal_kembali" class="form-control" required="">
-				</div>
-				<div class="form-group">
-					<label>Keterangan :</label> 
-					<textarea name="in_ket" class="form-control"></textarea>
 				</div>
 				<input type="hidden" name="in_kode" id="in_kode">
 				<input type="hidden" name="in_nama_brg" id="in_nama">
@@ -130,8 +99,8 @@
 
 <script>
 	$(document).ready(function(){
-		$('#tanggal_pinjam').datepicker();
-		$('#tanggal_kembali').datepicker();
+		$('#tanggal_masukbarang').datepicker();
+
 	});
 
 	$('#cari_barang').on('click', function(){

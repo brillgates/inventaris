@@ -18,6 +18,7 @@
 	<link href="<?php echo base_url("assets/template/") ?>css/datepicker3.css" rel="stylesheet">
 	<link href="<?php echo base_url("assets/template/") ?>css/styles.css" rel="stylesheet">
 	<link href="<?php echo base_url("assets/plugin/datatables/media/css/") ?>jquery.dataTables.min.css" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/plugin/sweetalert/') ?>sweetalert.css">
 	<!--Custom Font-->
 	<link href="https://fonts.googleapis.com/css?family=Montserrat:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
 	<!--[if lt IE 9]>
@@ -89,10 +90,7 @@
 	<div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">
 		<div class="row">
 			<ol class="breadcrumb">
-				<li><a href="#">
-					<em class="fa fa-home"></em>
-				</a></li>
-				<li class="active">Dashboard</li>
+				<li class="active">Perhitungan Grafik Per Bulan</li>
 			</ol>
 		</div><!--/.row-->
 		
@@ -102,7 +100,7 @@
 				<div class="col-xs-6 col-md-3 col-lg-3 no-padding">
 					<div class="panel panel-teal panel-widget border-right">
 						<div class="row no-padding"><em class="fa fa-xl fa-sign-in color-blue"></em>
-							<div class="large">120</div>
+							<div class="large" id="header_barang_masuk"></div>
 							<div class="text-muted">Barang Masuk</div>
 						</div>
 					</div>
@@ -110,7 +108,7 @@
 				<div class="col-xs-6 col-md-3 col-lg-3 no-padding">
 					<div class="panel panel-blue panel-widget border-right">
 						<div class="row no-padding"><em class="fa fa-xl fa-sign-out color-orange"></em>
-							<div class="large">52</div>
+							<div class="large" id="header_barang_keluar"></div>
 							<div class="text-muted">Barang Keluar</div>
 						</div>
 					</div>
@@ -118,7 +116,7 @@
 				<div class="col-xs-6 col-md-3 col-lg-3 no-padding">
 					<div class="panel panel-orange panel-widget border-right">
 						<div class="row no-padding"><em class="fa fa-xl fa-book color-teal"></em>
-							<div class="large">24</div>
+							<div class="large" id="header_barang_pinjam"></div>
 							<div class="text-muted">Barang Pinjam</div>
 						</div>
 					</div>
@@ -126,7 +124,7 @@
 				<div class="col-xs-6 col-md-3 col-lg-3 no-padding">
 					<div class="panel panel-red panel-widget ">
 						<div class="row no-padding"><em class="fa fa-xl fa-trash color-red"></em>
-							<div class="large">25.2k</div>
+							<div class="large" id="header_barang_rusak"></div>
 							<div class="text-muted">Barang Rusak</div>
 						</div>
 					</div>

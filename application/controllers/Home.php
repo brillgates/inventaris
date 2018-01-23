@@ -87,7 +87,30 @@ class Home extends CI_Controller {
 		$this->load->view('home/barang_masuk');
 		$this->load->view('home/layout/footer');
 	}
+	public function tambah_barang_masuk()
+	{
+		$data = array(
+			'tgl_masukbarang' => mdate('%d/%m/%Y'),
+			'kode_brg' => $this->input->post('in_kode'),
+			'nama_brg' => $this->input->post('in_nama_brg'),
+			'jumlah_masuk' => $this->input->post('in_jumlah'),
+			'supplier' => $this->input->post('supplier'),
+		);
 
+		$this->db->insert('masuk_barang', $data);
+
+		$cek = $this->input->post('jumlah_saat_ini') + $this->input->post('in_jumlah');
+
+		$this->db->set(array('jml_brg' => $cek));
+		$this->db->where('kode_brg', $this->input->post('in_kode'));
+		$a = $this->db->update('barang');
+
+		if ($a) {
+			echo "<script>alert('Berhasil Memasukkan Barang !'); location = '".base_url('home/barang_masuk')."'</script>";
+		}else{
+			echo "<script>alert('Gagal Memasukkan Barang !'); location = '".base_url('home/barang_masuk')."'</script>";
+		}
+	}
 	// ================== barang_keluar METHOD ==================================
 	// barang_keluar
 	public function barang_keluar()
@@ -104,8 +127,7 @@ class Home extends CI_Controller {
 		$this->load->view('home/layout/header');
 		$this->load->view('home/pinjam_barang');
 		$this->load->view('home/layout/footer');
-	}
-
+	}	
 	// search_barang_jenis
 	public function search_barang_kat()
 	{
@@ -133,6 +155,35 @@ class Home extends CI_Controller {
 		$get = $this->db->get_where('barang', array('kode_brg' => $kode))->row_array();
 		echo json_encode($get);
 	}
+	// masuk_barang
+	// public function barang_masuk_()
+	// {
+		
+
+	// 	$data = array(
+	// 		'tgl_masukbarang' => mdate('%d/%m/%Y'),
+	// 		'kode_brg' => $this->input->post('in_kode'),
+	// 		'nama_brg' => $this->input->post('in_nama_brg'),
+	// 		'jumlah_masuk' => $this->input->post('in_jumlah'),
+	// 		'supplier' => $this->input->post('in_nama'),
+
+	// 		// 'nama_brg' => $this->input->post('in_nama'),
+	// 	);
+
+	// 	$this->db->insert('barang_masuk', $data);
+
+	// 	$cek = $this->input->post('jumlah_saat_ini') + $this->input->post('in_jumlah');
+
+	// 	$this->db->set(array('jml_brg' => $cek));
+	// 	$this->db->where('kode_brg', $this->input->post('in_kode'));
+	// 	$a = $this->db->update('barang');
+
+	// 	if ($a) {
+	// 		echo "<script>alert('Berhasil Memasukkan Barang !'); location = '".base_url('home/barang_masuk')."'</script>";
+	// 	}else{
+	// 		echo "<script>alert('Gagal Memasukkan Barang !'); location = '".base_url('home/barang_masuk')."'</script>";
+	// 	}
+	// }
 
 	// tambah_pinjaman
 	public function tambah_pinjaman()
@@ -172,6 +223,28 @@ class Home extends CI_Controller {
 		$this->load->view('home/pinjam/list_barang_pinjam', $data);
 		$this->load->view('home/layout/footer');
 	}
+
+	// hapus_peminjaman
+	public function hapus_peminjaman()
+	{
+		$kode = $_POST['kode'];
+		$cek_pinjaman = $this->db->get_where('pinjam_barang', array('no_pinjam' => $kode))->row_array();
+
+		$this->db->set(array('status' => '1'));
+		$this->db->where('no_pinjam', $kode);
+		$this->db->update('pinjam_barang');
+
+		$cek_barang = $this->db->get_where('barang', array('kode_brg' => $cek_pinjaman['kode_brg']))->row_array();
+		
+
+		$hasil = $cek_barang['jml_brg'] + $cek_pinjaman['jumlah_pinjam'];
+
+		$this->db->set(array('jml_brg' => $hasil));
+		$this->db->where('kode_brg', $cek_pinjaman['kode_brg']);
+		$this->db->update('barang');
+
+		echo "Pinjaman Telah Di Kembalikan !";
+	}
 	// ================== data_barang METHOD ==================================
 	// data_barang
 	public function data_barang()
@@ -200,23 +273,16 @@ class Home extends CI_Controller {
 
 	}
 
-	//
-	public function hast()
-	 {
-	 	$this->load->library('encryption');
 
-	 	$this->encryption->initialize(
-	        array(
-	                'cipher' => 'aes-256',
-	                'mode' => 'cfb8',
-	                'key' => '<a 32-character random string>'
-	        )
-		);
-		$text = 'aku nub ster :(';
-		$enkrip = $this->encryption->encrypt($text);
 
-		
-		echo $enkrip;
-
-	 } 
+	// perhitungan_grafik
+	public function perhitungan_grafik()
+	{
+		$output = [];
+		$output['masuk'] = $this->db->like('tgl_masukbarang', mdate('%d/%m'))->get('masuk_barang')->num_rows();
+		// $output['keluar'] = $this->db->like('tgl_masukbarang', mdate('%d/%m'))->get('masuk_barang')->num_rows();
+		$output['pinjam'] = $this->db->like('tgl_pinjam', mdate('%d/%m'))->get('pinjam_barang')->num_rows();
+		// $output['rusak'] = $this->db->like('tgl_masukbarang', mdate('%d/%m'))->get('masuk_barang')->num_rows();
+		echo json_encode($output);
+	}
 }
