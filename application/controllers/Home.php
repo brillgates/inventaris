@@ -59,6 +59,7 @@ class Home extends CI_Controller {
 		$this->load->view('home/layout/header');
 		$this->load->view('home/home');
 		$this->load->view('home/layout/footer');
+		// echo "aahsdgsd";
 	}
 
 	// ================== SUPLIER METHOD ==================================
@@ -198,6 +199,7 @@ class Home extends CI_Controller {
 			'peminjam' => $this->input->post('in_nama'),
 			'tgl_kembali' => $this->input->post('in_tanggal_kembali'),
 			'ket' => $this->input->post('in_ket'),
+			'status' => '0',
 			// 'nama_brg' => $this->input->post('in_nama'),
 		);
 
