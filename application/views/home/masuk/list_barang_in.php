@@ -22,10 +22,10 @@
 				foreach ($data as $key) {
 					?>
 					<tr>
-						<td><?php echo $key['nama_brg']; ?></td>
+						<td style="text-align: center;"><?php echo $key['nama_brg']; ?></td>
 						<td style="text-align: center;"><?php echo $key['tgl_masukbarang']; ?></td>
 						<td style="text-align: center;"><?php echo $key['jumlah_masuk']; ?></td>
-						<td><?php echo $key['supplier']; ?></td>
+						<td style="text-align: center;"><?php echo $key['supplier']; ?></td>
 						
 						
 						

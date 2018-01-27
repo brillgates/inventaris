@@ -2,7 +2,7 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 
-// Controller 
+// Controller  
 class Home extends CI_Controller {
 
 	function __construct(){
@@ -79,7 +79,47 @@ class Home extends CI_Controller {
 		$this->load->view('home/barang');
 		$this->load->view('home/layout/footer');
 	}
+	// tambah_data_barang
+	public function tambah_data_barang()
+	{	
+		$data['data'] = $this->db->get('kategori_barang')->result_array();
+		$this->load->view('home/layout/header');
+		$this->load->view('home/barang/tambah_data_barang', $data);
+		$this->load->view('home/layout/footer');
+	}
+	// insert_data_barang
+	public function insert_data_barang()
+	{
+		// nama : nama, kode : kode, spek : spek, lokasi : lokasi, kategori : kategori, jumlah : jumlah, kondisi : kondisi, jenis : jenis
+		$nama = $_POST['nama'];
+		$kode = $_POST['kode'];
+		$spek = $_POST['spek'];
+		$lokasi = $_POST['lokasi'];
+		$kategori = $_POST['kategori'];
+		$jumlah = $_POST['jumlah'];
+		$kondisi = $_POST['kondisi'];
+		$jenis = $_POST['jenis'];
+		$sumber_dana = $_POST['sumber_dana'];
 
+		$data = array(
+			'kode_brg' => $kode,
+			'nama_brg' => $nama,
+			'spesifikasi' => $spek,
+			'lokasi_brg' => $lokasi,
+			'kategori' => $kategori,
+			'jml_brg' => $jumlah,
+			'kondisi' => $kondisi,
+			'jenis_brg' => $jenis,
+			'sumber_dana' => $sumber_dana
+		);
+
+		$simpan = $this->db->insert('barang', $data);
+		if ($simpan) {
+			echo "berhasil";
+		}else{
+			echo "gagal";
+		}
+	}
 	// ================== barang_masuk METHOD ==================================
 	// barang_masuk
 	public function barang_masuk()
@@ -260,7 +300,6 @@ class Home extends CI_Controller {
 		$this->load->view('home/layout/header');
 		$this->load->view('home/keluar/list_barang_keluar', $data);
 		$this->load->view('home/layout/footer');
-
 	}
 	// hapus_peminjaman
 	public function hapus_peminjaman()
@@ -288,9 +327,15 @@ class Home extends CI_Controller {
 	// data_barang
 	public function data_barang()
 	{
+		$data['data'] = $this->db->order_by('kode_brg', 'DESC')->get('barang')->result_array();
 		$this->load->view('home/layout/header');
-		$this->load->view('home/data_barang');
+		$this->load->view('home/data_barang', $data);
 		$this->load->view('home/layout/footer');
+	}
+
+	public function tampil_data()
+	{
+
 	}
 
 	// ================== setting METHOD ==================================
