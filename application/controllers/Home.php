@@ -37,6 +37,7 @@ class Home extends CI_Controller {
 			$dapat = $cek->row_array();
 
 			$array = array(
+				'id' => $dapat['id_user'],
 				'nama' 		=> $dapat['nama'], 
 				'username' 	=> $dapat['username'], 
 				'password' 	=> $dapat['password'], 
@@ -362,10 +363,11 @@ class Home extends CI_Controller {
 		$this->db->set(
 			array(
 				'username' => $this->input->post('in_username'),
-				'password' => $this->input->post('in_password')
+				'nama' => $this->input->post('in_nama'),
+				'password' => sha1($this->input->post('in_password'))
 		)
 		);
-		$this->db->where('id_user', $_SESSION['username']);
+		$this->db->where('id_user', $_SESSION['id']);
 		$this->db->update('user');
 		redirect('home/setting');
 		echo "username telah diupdate !";
