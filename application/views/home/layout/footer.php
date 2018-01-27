@@ -25,6 +25,7 @@
 	
 	$(document).ready(function(){
 	    $('#table_list_pinjaman').DataTable();
+<<<<<<< HEAD
 
 	    $('#table_list_in').DataTable();
 	    
@@ -33,6 +34,11 @@
 	    $('#table_list_barang').DataTable();
 	    // 
 
+=======
+	    $('#table_list_in').DataTable();
+	    $('#table_list_barang_keluar').DataTable();
+	    
+>>>>>>> 0cfa5024f7f0832af1c66f0bc4109e09620493dc
 	});
 
 	function perhitungan_grafik() {
@@ -43,8 +49,13 @@
 			success : function(data){
 				$('#header_barang_masuk').html(data.masuk);
 				$('#header_barang_pinjam').html(data.pinjam);
+<<<<<<< HEAD
 
 				$('#header_barang_keluar').html(data.keluar);
+=======
+				$('#header_barang_keluar').html(data.keluar);
+				// 
+>>>>>>> 0cfa5024f7f0832af1c66f0bc4109e09620493dc
 			}
 		})
 	}
