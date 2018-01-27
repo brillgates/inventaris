@@ -66,8 +66,19 @@ class Home extends CI_Controller {
 	// suplier
 	public function suplier()
 	{
+		$a['data'] = $this->db->get('supplier')->result_array();
+
 		$this->load->view('home/layout/header');
-		$this->load->view('home/suplier');
+		$this->load->view('home/suplier', $a);
+		$this->load->view('home/layout/footer');
+	}
+	// suplier
+	public function tambah_suplier()
+	{
+		// $a['data'] = $this->db->get('supplier')->result_array();
+
+		$this->load->view('home/layout/header');
+		$this->load->view('home/tambah_suplier');
 		$this->load->view('home/layout/footer');
 	}
 
