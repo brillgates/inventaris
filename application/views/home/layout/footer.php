@@ -29,6 +29,8 @@
 	    $('#table_list_in').DataTable();
 	    
 	    $('#table_list_barang_keluar').DataTable();
+	    // table_list_barang
+	    $('#table_list_barang').DataTable();
 	    // 
 
 	});
@@ -41,7 +43,8 @@
 			success : function(data){
 				$('#header_barang_masuk').html(data.masuk);
 				$('#header_barang_pinjam').html(data.pinjam);
-				// 
+
+				$('#header_barang_keluar').html(data.keluar);
 			}
 		})
 	}

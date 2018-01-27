@@ -2,7 +2,7 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 
-// Controller 
+// Controller  
 class Home extends CI_Controller {
 
 	function __construct(){
@@ -79,7 +79,47 @@ class Home extends CI_Controller {
 		$this->load->view('home/barang');
 		$this->load->view('home/layout/footer');
 	}
+	// tambah_data_barang
+	public function tambah_data_barang()
+	{	
+		$data['data'] = $this->db->get('kategori_barang')->result_array();
+		$this->load->view('home/layout/header');
+		$this->load->view('home/barang/tambah_data_barang', $data);
+		$this->load->view('home/layout/footer');
+	}
+	// insert_data_barang
+	public function insert_data_barang()
+	{
+		// nama : nama, kode : kode, spek : spek, lokasi : lokasi, kategori : kategori, jumlah : jumlah, kondisi : kondisi, jenis : jenis
+		$nama = $_POST['nama'];
+		$kode = $_POST['kode'];
+		$spek = $_POST['spek'];
+		$lokasi = $_POST['lokasi'];
+		$kategori = $_POST['kategori'];
+		$jumlah = $_POST['jumlah'];
+		$kondisi = $_POST['kondisi'];
+		$jenis = $_POST['jenis'];
+		$sumber_dana = $_POST['sumber_dana'];
 
+		$data = array(
+			'kode_brg' => $kode,
+			'nama_brg' => $nama,
+			'spesifikasi' => $spek,
+			'lokasi_brg' => $lokasi,
+			'kategori' => $kategori,
+			'jml_brg' => $jumlah,
+			'kondisi' => $kondisi,
+			'jenis_brg' => $jenis,
+			'sumber_dana' => $sumber_dana
+		);
+
+		$simpan = $this->db->insert('barang', $data);
+		if ($simpan) {
+			echo "berhasil";
+		}else{
+			echo "gagal";
+		}
+	}
 	// ================== barang_masuk METHOD ==================================
 	// barang_masuk
 	public function barang_masuk()
@@ -324,7 +364,7 @@ class Home extends CI_Controller {
 	{
 		$output = [];
 		$output['masuk'] = $this->db->like('tgl_masukbarang', mdate('%d/%m'))->get('masuk_barang')->num_rows();
-		// $output['keluar'] = $this->db->like('tgl_masukbarang', mdate('%d/%m'))->get('masuk_barang')->num_rows();
+		$output['keluar'] = $this->db->like('tgl_keluar', mdate('%d/%m'))->get('keluar_barang')->num_rows();
 		$output['pinjam'] = $this->db->like('tgl_pinjam', mdate('%d/%m'))->get('pinjam_barang')->num_rows();
 		// $output['rusak'] = $this->db->like('tgl_masukbarang', mdate('%d/%m'))->get('masuk_barang')->num_rows();
 		echo json_encode($output);

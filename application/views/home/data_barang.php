@@ -6,7 +6,7 @@
 				<h3><i class="fa fa-list"></i> Data Barang</h3>
 			</div>
 			<div class="panel-body">
-				<button onclick="location = '<?php echo base_url("home/data_barang") ?>'" style="margin-bottom: 10px;" class="btn btn-success"><i class="fa fa-plus"></i> Tambah Barang</button>
+				<a class="btn btn-primary" style="margin-bottom: 10px" href="<?php echo base_url("home/tambah_data_barang") ?>" target="_blank"><i class="fa fa-plus"></i> Tambah Barang</a>
 				<table class="table" id="table_list_barang">
 					<thead>
 						<tr>
@@ -19,7 +19,7 @@
 							<th style="text-align: center;">Kondisi</th>
 							<th style="text-align: center;">Jenis Barang</th>
 							<th style="text-align: center;">Sumber Dana</th>
-							<th style="text-align: center;">Options</th>
+							<!-- <th style="text-align: center;">Options</th> -->
 						</tr>
 					</thead>
 					<tbody>
