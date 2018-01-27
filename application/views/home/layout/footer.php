@@ -25,13 +25,11 @@
 	
 	$(document).ready(function(){
 	    $('#table_list_pinjaman').DataTable();
-<<<<<<< HEAD
 	    $('#table_list_in').DataTable();
-	    
-=======
+
 	    $('#table_list_barang_keluar').DataTable();
 	    // 
->>>>>>> 36831ea11b8e1b3dde1312bfa28f4d7484963aff
+
 	});
 
 	function perhitungan_grafik() {
