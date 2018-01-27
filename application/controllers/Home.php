@@ -301,7 +301,19 @@ class Home extends CI_Controller {
 		$this->load->view('home/setting');
 		$this->load->view('home/layout/footer');
 	}
-
+	public function update_setting ()
+	{
+		$this->db->set(
+			array(
+				'username' => $this->input->post('in_username'),
+				'password' => $this->input->post('in_password')
+		)
+		);
+		$this->db->where('id_user', $_SESSION['username']);
+		$this->db->update('user');
+		redirect('home/setting');
+		echo "username telah diupdate !";
+	}
 	public function logout()
 
 	{
