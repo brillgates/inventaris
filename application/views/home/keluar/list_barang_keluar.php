@@ -7,6 +7,18 @@
 			</div>
 			<div class="panel-body">
 				<button onclick="location = '<?php echo base_url("home/barang_keluar") ?>'" style="margin-bottom: 10px;" class="btn btn-success"><i class="fa fa-plus"></i> Tambah Barang Keluar</button>
+				<!DOCTYPE html>
+		<html>
+			<body>
+				<p>klik untuk print</p>
+				<button onclick="myFunction()">Print disini</button>
+		<script>
+				function myFunction() {
+    			window.print();
+			}
+		</script>
+			</body>
+				</html>
 				<table class="table" id="table_list_barang_keluar">
 					<thead>
 						<tr>
