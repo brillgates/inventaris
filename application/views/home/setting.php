@@ -18,19 +18,19 @@
 				<input type="text" name="in_username" class="form-control" required="">
 			</div>
 
-	<div class="panel-body">
+	<!--<div class="panel-body">-->
 		<form method="POST" action="<?php echo base_url("home/update_setting") ?>">
 			<div class="form-group">
 				<label>Nama</label> 
 				<input type="text" name="in_nama" class="form-control" required="">
 			</div>
-	<div class="panel-body">
+	<!--<div class="panel-body">-->
 		<!-- <form method="POST" action="<?php echo base_url("home/update_setting") ?>"> -->
 			<div class="form-group">
 				<label>Password</label> 
 				<input type="password" name="in_password" class="form-control" required="">
 				</div>
-	<div class="panel-body">
+	<!--<div class="panel-body">-->
 		<!-- <form method="POST" action="<?php echo base_url("home/update_setting") ?>"> -->
 			<div class="form-group">
 					<label>Repeat Password</label> 

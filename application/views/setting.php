@@ -15,12 +15,12 @@
 	<div class="col-md-12">
 		
 		<div class="panel">
-			<div class="panel-heading">
-				<h2><i class="fa fa-book"></i> Barang Keluar</h2>
-			</div>
-			<div class="panel-body">
+		<div class="panel-heading">
+		<h2><i class="fa fa-book"></i> Barang Keluar</h2>
+		</div>
+		<div class="panel-body">
 				
-			</div>
+		</div>
 		</div>
 
 	</div>

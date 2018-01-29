@@ -24,7 +24,7 @@
 					<div>
 						<div>
 
-						<button class="btn btn-primary" id="cari_barang">Tambah</button>
+						<button class="btn btn-primary" id="cari_barang">  SIMPAN  </button>
 
 						</div>
 					</div>
