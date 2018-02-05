@@ -67,18 +67,9 @@
 				<ul class="children collapse" id="sub-item-1">
 					<li><a href="<?php echo base_url("home/list_barang") ?>"><em class="fa fa-list">&nbsp;</em> List Barang</a></li>
 					<li><a href="<?php echo base_url("home/list_barang_pinjam") ?>"><em class="fa fa-list">&nbsp;</em> List Pinjaman</a></li>
-<<<<<<< HEAD
-
 					<li><a href="<?php echo base_url("home/list_barang_in") ?>"><em class="fa fa-list">&nbsp;</em> List Barang In</a></li>
 					
 					<li><a href="<?php echo base_url("home/list_barang_keluar") ?>"><em class="fa fa-list">&nbsp;</em> List Barang Out</a></li>
-
-=======
-					<li><a href="<?php echo base_url("home/list_barang_in") ?>"><em class="fa fa-list">&nbsp;</em> List Barang In</a></li>
-					<li><a href="<?php echo base_url("home/list_barang") ?>"><em class="fa fa-list">&nbsp;</em> List Barang Out</a></li>
-					<li><a href="<?php echo base_url("home/list_barang") ?>"><em class="fa fa-list">&nbsp;</em> List Barang In</a></li>
-					<li><a href="<?php echo base_url("home/list_barang_keluar") ?>"><em class="fa fa-list">&nbsp;</em> List Barang Out</a></li>
->>>>>>> 0cfa5024f7f0832af1c66f0bc4109e09620493dc
 				</ul>
 			</li>
 
@@ -87,8 +78,8 @@
 			<li><a href="<?php echo base_url("home/barang_keluar") ?>"><em class="fa fa-sign-out">&nbsp;</em> Barang Keluar</a></li>
 			<li><a href="<?php echo base_url("home/pinjam_barang") ?>"><em class="fa fa-file">&nbsp;</em> Pinjam Barang</a></li>
 			<li><a href="<?php echo base_url("home/data_barang") ?>"><em class="fa fa-search">&nbsp;</em> Data Barang</a></li>
-
 			<li><a href="<?php echo base_url("home/setting") ?>"><em class="fa fa-gear">&nbsp;</em> Setting</a></li>
+			<li><a href="<?php echo base_url("home/tambah_user") ?>"><em class="fa fa-gear">&nbsp;</em> Tambah User</a></li>
 
 			
 			<li class="bg-red"><a style="color:white " href="<?php echo base_url("home/logout") ?>"><em class="fa fa-dashboard">&nbsp;</em> Logout</a></li>
