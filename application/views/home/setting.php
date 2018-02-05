@@ -19,7 +19,7 @@
 			</div>
 
 	<div class="panel-body">
-		<form method="POST" action="<?php echo base_url("home/update_setting") ?>">
+		<!--<form method="POST" action="<?php echo base_url("home/update_setting") ?>">-->
 			<div class="form-group">
 				<label>Nama</label> 
 				<input type="text" name="in_nama" class="form-control" required="">
@@ -53,9 +53,6 @@
 		<div class="panel">
 			<div class="panel-heading">
 				
-			</div>
-			<div class="panel-body">
-				jhg
 			</div>
 		</div>
 	</div>
