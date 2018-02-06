@@ -9,7 +9,7 @@
 				
 			</div>
 			<div class="panel-body">
-				<table class="table">
+				<table class="table"
 
 	<div class="panel-body">
 		<form method="POST" action="<?php echo base_url("home/update_setting") ?>">
@@ -18,24 +18,19 @@
 				<input type="text" name="in_username" class="form-control" required="">
 			</div>
 
-<<<<<<< HEAD
-	<!--<div class="panel-body">-->
-		<form method="POST" action="<?php echo base_url("home/update_setting") ?>">
-=======
 	<div class="panel-body">
-		<!--<form method="POST" action="<?php echo base_url("home/update_setting") ?>">-->
->>>>>>> 99e25ec09e3ad297dccd68c79c893d5deffe9ff0
+		<<form method="POST" action="<?php echo base_url("home/update_setting") ?>">
 			<div class="form-group">
 				<label>Nama</label> 
 				<input type="text" name="in_nama" class="form-control" required="">
 			</div>
-	<!--<div class="panel-body">-->
+	<div class="panel-body">
 		<!-- <form method="POST" action="<?php echo base_url("home/update_setting") ?>"> -->
 			<div class="form-group">
 				<label>Password</label> 
 				<input type="password" name="in_password" class="form-control" required="">
 				</div>
-	<!--<div class="panel-body">-->
+	<div class="panel-body">
 		<!-- <form method="POST" action="<?php echo base_url("home/update_setting") ?>"> -->
 			<div class="form-group">
 					<label>Repeat Password</label> 
