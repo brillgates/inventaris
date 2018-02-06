@@ -8,7 +8,7 @@
 			<div class="panel-body">
 				<table class="table">
 					<thead>
-
+				<form method="post" action="<?php echo base_url('home/add_suplier') ?>">
 					<div class="form-group">
 					<label> kode :</label> 
 					<input type="text" name="in_kode_supplier" class="form-control" required="">
@@ -24,11 +24,13 @@
 					<div>
 						<div>
 
-						<button class="btn btn-primary" id="cari_barang">  SIMPAN  </button>
-
+						<input type="submit" class="btn btn-info" value="Simpan">
+					<div class="form-group">
+					
+				</div>
 						</div>
 					</div>
-				
+			</form>
 				</div>
 				</thead>
 			</table>

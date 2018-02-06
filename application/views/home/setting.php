@@ -17,9 +17,16 @@
 				<label>Username</label> 
 				<input type="text" name="in_username" class="form-control" required="">
 			</div>
+<<<<<<< HEAD
 
 	<div class="panel-body">
 		<<form method="POST" action="<?php echo base_url("home/update_setting") ?>">
+=======
+	<!--<div class="panel-body">-->
+		<form method="POST" action="<?php echo base_url("home/update_setting") ?>">
+			<div class="panel-body">
+		<!--<form method="POST" action="<?php echo base_url("home/update_setting") ?>">-->
+>>>>>>> dabc26199af209a4e72b4683befd6819342d1851
 			<div class="form-group">
 				<label>Nama</label> 
 				<input type="text" name="in_nama" class="form-control" required="">

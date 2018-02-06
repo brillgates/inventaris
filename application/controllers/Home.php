@@ -394,4 +394,23 @@ class Home extends CI_Controller {
 		// $output['rusak'] = $this->db->like('tgl_masukbarang', mdate('%d/%m'))->get('masuk_barang')->num_rows();
 		echo json_encode($output);
 	}
+
+	// add_suplier
+	public function add_suplier()
+	{
+		$data = array(
+			'kode_supplier' => $this->input->post('in_kode_supplier'),
+			'nama_supplier' => $this->input->post('in_nama_supplier'),
+			'alamat_supplier' => $this->input->post('in_alamat_supplier'),
+			'telp_supplier' => $this->input->post('in_telp_supplier'),
+			'kota_supplier' => $this->input->post('in_kota_supplier'),
+		);
+
+		$a = $this->db->insert('supplier', $data);
+		if ($a) {
+			echo "<script>alert('Berhasil Menambahkan Supplier !'); location = '".base_url('home/tambah_suplier')."'</script>";
+		}else{
+			echo "<script>alert('Gagal Menambahkan Supplier !'); location = '".base_url('home/tambah_suplier')."'</script>";
+		}		
+	}
 }

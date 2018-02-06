@@ -7,7 +7,7 @@
 			</div>
 			<div class="panel-body">
 				<a class="btn btn-primary" style="margin-bottom: 10px" href="<?php echo base_url("home/tambah_suplier") ?>" target="_blank"><i class="fa fa-plus"></i> Tambah supplier</a>
-				<table class="table">
+				<table class="table" id="table_suplier">
 					<thead>
 						<tr>
 							<th>KODE </th>
