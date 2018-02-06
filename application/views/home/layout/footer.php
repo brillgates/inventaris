@@ -25,7 +25,8 @@
 	
 	$(document).ready(function(){
 	    $('#table_list_pinjaman').DataTable();
-
+	    $('#table_suplier').DataTable();
+	    // table_suplier
 	    $('#table_list_in').DataTable();
 
 
